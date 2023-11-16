@@ -301,10 +301,10 @@ function GenerateJoke(params: {
   temperature: number;
   jokeStyle: string;
 }) {
+  const [prompt, setPrompt] = useState("");
+  
   if (!params.theme || !params.tone || !params.temperature || !params.jokeStyle)
     return <button disabled>Generate Joke Prompt</button>;
-
-  const [prompt, setPrompt] = useState("");
 
   if (!prompt)
     return (
